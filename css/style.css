@@ -12,11 +12,21 @@
     padding: 15px;
 }
 
-img{
+.img-card{
     height: 600px;
     width: 600px;
 }
 
 .pt-50{
     padding-top: 50px;
+}
+
+.left-50{
+    left: 50%;
+}
+.transform-trans-50{
+    transform: translateX(-50%);
+}
+.top-10px{
+    top: -10px;
 }
