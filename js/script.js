@@ -7,3 +7,6 @@ let literal = `<div class="col-sm-12 col-md-6 col-lg-4">
                         </div>
                     </div>
                 </div>`
+                
+//chiamo una funzione passandogli una callaback per creare le cards con la risposta della chiamata axios 
+axiosCall(createCards());
