@@ -1,3 +1,6 @@
-.wall{
+.bg-wall{
     background-image: url("../img/wall.png");
+}
+.fs-80{
+    font-size: 80px;
 }
