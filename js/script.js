@@ -19,12 +19,11 @@ function axiosCall(callback, n){
 
 function createCards(array){
     array.forEach(el => {
-        console.log(el.url)
         cards.innerHTML +=
         `<div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card" id="${el.id}">
                     <img src="./img/pin.svg" class="position-absolute left-50 transform-trans-50 top-10px" alt="...">
-                    <img src="${el.url}" class="card-img-top p-15 img-card" alt="...">
+                    <img src="${el.url}" class="card-img-top p-15 img-card" id="photo" alt="...">
                 <div class="card-body">
                     <p class="card-text">${el.title}</p>
                 </div>
@@ -35,3 +34,19 @@ function createCards(array){
 //chiamo una funzione passandogli una callaback per creare le cards con la risposta della chiamata axios 
 let cardNum = 6;
 axiosCall(createCards, cardNum);
+
+let cards = document.getElementById("cards")
+let overlay = document.getElementById("overlay")
+
+cards.addEventListener("click", (event)=>{
+    event.preventDefault();
+    console.log("ciao")    
+    overlay.style.display = "block";
+
+})
+
+closeOverlay.addEventListener("click", (event)=>{
+    event.preventDefault();
+    console.log("ciao ciao")
+    overlay.style.display = "none";
+})
