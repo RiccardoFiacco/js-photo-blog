@@ -31,18 +31,40 @@
     top: -10px;
 }
 
+.top-25{
+    top: 25%;
+}
 .overlay{ 
-    background-color: black;
-    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.501);
+    z-index: 13;
     position: fixed;
-    opacity: 50%;
+    display: none;
     width: 100%;
     height: 100%;
 }
 
 .z-index-2{
-    z-index: 1;
+    z-index: 2;
 } 
 .relative{
     position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.h-50{
+    height: 50%;
+
+}
+.w-25{
+    width: 25%;
+}
+.absolute.opacity-100{
+    opacity: 100%;
+}
+
+.right-0{
+    right: 0;
 }
