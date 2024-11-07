@@ -15,7 +15,7 @@ function axiosCall(callback, n){
         callback(array)
     })
     .catch((err) => console.log(err));
-};
+}
 
 function createCards(array){
     array.forEach(el => {
@@ -23,17 +23,24 @@ function createCards(array){
         `<div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card" id="${el.id}">
                     <img src="./img/pin.svg" class="position-absolute left-50 transform-trans-50 top-10px" alt="...">
-                    <img src="${el.url}" onclick="seeOverlay('${el.url}')" class="card-img-top p-15 img-card" id="photo" alt="...">
+                    <img src="${el.thumbnailUrl}" data-onclick-image="${el.url}" class="card-img-top p-15 img-card" alt="...">
                 <div class="card-body">
                     <p class="card-text">${el.title}</p>
                 </div>
             </div>
         </div>`
     });
+    addListener()
 }
 
-
-
+function addListener(){
+    let els = document.querySelectorAll(".card-img-top");
+    els.forEach((el)=>{
+        el.addEventListener("click", function() {
+            seeOverlay(el.getAttribute('data-onclick-image'))
+        })
+    })
+}
 function seeOverlay(url){
 
     const app = document.getElementById("img-overlay");
